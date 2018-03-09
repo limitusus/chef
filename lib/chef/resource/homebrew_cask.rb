@@ -48,7 +48,7 @@ class Chef
 
       property :owner, String,
                description: "The owner of the homebrew installation.",
-               default: Chef::Mixin::HomebrewUser.find_homebrew_username
+               default: lazy { Chef::Mixin::HomebrewUser.find_homebrew_username }
 
       action :install do
         description "Install an application packaged as a Homebrew cask."
